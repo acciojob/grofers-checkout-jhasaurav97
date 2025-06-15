@@ -12,10 +12,12 @@ const prices = document.querySelectorAll(".price");
   const totalRow = document.createElement("tr");
   const totalCell = document.createElement("td");
   totalCell.colSpan = 2; 
-  totalCell.textContent = `Total Price: Rs ${total}`;
+  const ansSpan = document.createElement("span");
+  ansSpan.id = "ans";
+  ansSpan.textContent = total;
+  totalCell.appendChild(ansSpan);
   totalRow.appendChild(totalCell);
-  const table = document.querySelector("table");
-  table.appendChild(totalRow);
+  document.querySelector("table").appendChild(totalRow);
   getSumBtn.disabled = true;
 };
 
